@@ -35,8 +35,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """A method that return a tuple of size two containing a start index and an
-           end index corresponding to the range of indexes to return in a list
+        """Retrieves a page of data
         """
         assert type(page) == int and type(page_size) == int
         assert page > 0 and page_size > 0
