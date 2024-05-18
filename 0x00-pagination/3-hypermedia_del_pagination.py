@@ -40,7 +40,8 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-        """A method that returns a dictionary of ll pages even if they were deleted
+        """A method that returns a dictionary of all pages
+        even if they were deleted
         """
         assert type(index) == int
         assert type(page_size) == int
