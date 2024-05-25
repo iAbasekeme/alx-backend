@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ LIFO caching
 """
+from collections import OrderedDict
 from base_caching import BaseCaching
 
 
