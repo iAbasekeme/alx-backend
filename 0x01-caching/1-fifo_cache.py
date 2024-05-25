@@ -12,6 +12,7 @@ class FIFOCache(BaseCaching):
         """ Initialize
         """
         super().__init__()
+        self.cache_data = OrderedDict()
 
     def put(self, key, item):
         """ Discarding the frist element of a cache
