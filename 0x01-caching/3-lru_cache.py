@@ -21,12 +21,13 @@ class LRUCache(BaseCaching):
         """
         if key is None or item is None:
             return
-        elif key in self.cache_data:
+        if key in self.cache_data:
             self.cache_data.move_to_end(key)
+
         self.cache_data[key] = item
-        if len(self.cache_data) + 1 > BaseCaching.MAX_ITEMS:
-            last_key, _ = self.cache_data.popitem(last=False)
-            print("DISCARD:", last_key)
+        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+            lru_key, lru_value = self.cache_data.popitem(last=False)
+            print(f"DISCARD: {lru_key}")
 
     def get(self, key):
         """Retrieves an item by key.
